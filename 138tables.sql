@@ -20,18 +20,18 @@ CREATE TABLE team_captain (
                             date_joined DATE NOT NULL,
                             salary INTEGER NOT NULL,
                             jersey_number INTEGER NOT NULL,
-                            p_type CHAR(25) PRIMARY KEY
+                            player_id INTEGER PRIMARY KEY
                           );
 CREATE TABLE team_player (
                             date_joined DATE NOT NULL,
                             salary INTEGER NOT NULL,
                             jersey_number INTEGER NOT NULL,
-                            p_type CHAR(25) PRIMARY KEY
+                            player_id INTEGER PRIMARY KEY
                           );
 CREATE TABLE free_agent (
                             date_left DATE NOT NULL,
                             desired_salary INTEGER NOT NULL,
-                            p_type CHAR(25) PRIMARY KEY
+                            player_id INTEGER PRIMARY KEY
                         );
                           
                           
@@ -48,11 +48,10 @@ CREATE TABLE player (
                          minutes_played INTEGER NOT NULL,
                          player_id INTEGER NOT NULL,
                          team_name CHAR(25) NOT NULL,
-                         player_status CHAR(15) NOT NULL,
                          FOREIGN KEY (team_name) REFERENCES team(team_name),
-                         FOREIGN KEY (p_type) REFERENCES team_captain(p_type),
-                         FOREIGN KEY (p_type) REFERENCES team_player(p_type),
-                         FOREIGN KEY (p_type) REFERENCES free_agent(p_type)
+                         FOREIGN KEY (player_id) REFERENCES team_captain(player_id),
+                         FOREIGN KEY (player_id) REFERENCES team_player(player_id),
+                         FOREIGN KEY (player_id) REFERENCES free_agent(player_id)
                     );
 
                      
