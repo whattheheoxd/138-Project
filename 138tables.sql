@@ -2,6 +2,7 @@ drop database if exists soccer;
 create database soccer;
 use soccer;
 
+
 CREATE TABLE team (
                         team_name CHAR(25) PRIMARY KEY,
                         salary_cap INTEGER NOT NULL DEFAULT 0,
@@ -21,14 +22,12 @@ CREATE TABLE team_captain (
                             jersey_number INTEGER NOT NULL,
                             player_id INTEGER PRIMARY KEY
                           );
-                          
 CREATE TABLE team_player (
                             date_joined DATE NOT NULL,
                             salary INTEGER NOT NULL,
                             jersey_number INTEGER NOT NULL,
                             player_id INTEGER PRIMARY KEY
                           );
-                          
 CREATE TABLE free_agent (
                             date_left DATE NOT NULL,
                             desired_salary INTEGER NOT NULL,
@@ -79,7 +78,7 @@ CREATE TABLE owner (
                         f_name CHAR(15) NOT NULL,
                         l_name CHAR(15) NOT NULL,
                         net_worth INTEGER NOT NULL
-                   );
+                    );
                     
 CREATE TABLE league (
                         league_name CHAR(20) PRIMARY KEY,
@@ -88,4 +87,40 @@ CREATE TABLE league (
                         participating_team_name CHAR(25) NOT NULL,
                         FOREIGN KEY (participating_team_name) REFERENCES team(team_name)
                     );
-    
+                    
+                    
+CREATE TABLE user (
+				   user_id CHAR(40) PRIMARY KEY,
+                   user_name varchar (20) not null,
+                   birth_date date not null,
+                   sex varchar(1) not null,
+                   league_following nvarchar(4) not null,
+                   age integer not null,
+                   FOREIGN KEY (league_follwing) REFERENCES league(league_name)
+                   
+			     );
+                 
+                 
+create table fixture ( 
+						fixture_date_time datetime not null,
+                        location varchar(20) not null,
+                        team_id varchar(20) primary key,
+                        FOREIGN KEY (team_id) REFERENCES league(team_id),
+                        FOREIGN KEY (team_id) REFERENCES team(team_id)
+					);
+                    
+
+create table match_officials (
+                              ssn char(11) primary key,
+                              match_official_name varchar(20) not null,
+                              team_id varchar(20),
+                              FOREIGN KEY (team_id) REFERENCES league(team_id)
+                             );
+
+create table stadium (  
+                        stadium_id varchar(20) primary key,
+                        location varchar(20) not null,
+                        capacity integer not null,
+                        team_id varchar(20),
+                        FOREIGN KEY (team_id) REFERENCES team(team_id)
+                     );
