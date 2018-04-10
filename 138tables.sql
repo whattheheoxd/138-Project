@@ -88,39 +88,4 @@ CREATE TABLE league (
                         participating_team_name CHAR(25) NOT NULL,
                         FOREIGN KEY (participating_team_name) REFERENCES team(team_name)
                     );
-                    
-                    
-CREATE TABLE user (
-				           user_id CHAR(40) PRIMARY KEY,
-                   user_name varchar (20) not null,
-                   birth_date date not null,
-                   sex varchar(1) not null,
-                   league_following nvarchar(4) not null,
-                   age integer not null,
-                   FOREIGN KEY (league_follwing) REFERENCES league(league_name)        
-			            );
-                 
-                 
-create table fixture ( 
-						            fixture_date_time datetime not null,
-                        location varchar(20) not null,
-                        team_id varchar(20) primary key,
-                        FOREIGN KEY (team_id) REFERENCES league(team_id),
-                        FOREIGN KEY (team_id) REFERENCES team(team_id)
-				           	);
-                    
-
-create table match_officials (
-                              ssn char(11) primary key,
-                              match_official_name varchar(20) not null,
-                              team_id varchar(20),
-                              FOREIGN KEY (team_id) REFERENCES league(team_id)
-                             );
-
-create table stadium (  
-                        stadium_id varchar(20) primary key,
-                        location varchar(20) not null,
-                        capacity integer not null,
-                        team_id varchar(20),
-                        FOREIGN KEY (team_id) REFERENCES team(team_id)
-                     );
+    
