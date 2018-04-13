@@ -4,8 +4,9 @@ use soccer;
 
 
 CREATE TABLE team (
-                        team_name CHAR(25) PRIMARY KEY,
-                        salary_cap INTEGER NOT NULL DEFAULT 0,
+                        team_name VARCHAR(25) PRIMARY KEY,
+                        team_id CHAR(4),
+                        salary_cap FLOAT NOT NULL DEFAULT 0,
                         wins INTEGER NOT NULL DEFAULT 0,
                         losses INTEGER NOT NULL DEFAULT 0,
                         home_wins INTEGER NOT NULL DEFAULT 0,
@@ -36,10 +37,10 @@ CREATE TABLE free_agent (
                           
                           
 CREATE TABLE player (
-                         SSN INTEGER PRIMARY KEY,
-                         p_type CHAR(25) NOT NULL,
-                         f_name CHAR(15) NOT NULL,
-                         l_name CHAR(15) NOT NULL,
+                         SSN CHAR(9) PRIMARY KEY,
+                         p_type VARCHAR(25) NOT NULL,
+                         f_name VARCHAR(15) NOT NULL,
+                         l_name VARCHAR(15) NOT NULL,
                          age INTEGER NOT NULL,
                          goals_scored INTEGER NOT NULL,
                          goals_stopped INTEGER NOT NULL,
@@ -47,56 +48,60 @@ CREATE TABLE player (
                          red_cards INTEGER NOT NULL,
                          minutes_played INTEGER NOT NULL,
                          player_id INTEGER NOT NULL,
-                         team_name CHAR(25) NOT NULL,
-                         FOREIGN KEY (team_name) REFERENCES team(team_name),
-                         FOREIGN KEY (player_id) REFERENCES team_captain(player_id),
-                         FOREIGN KEY (player_id) REFERENCES team_player(player_id),
+                         team_name VARCHAR(25) NOT NULL,
+                         FOREIGN KEY (team_name) REFERENCES team(team_name)
+                            on delete set null,
+                         FOREIGN KEY (player_id) REFERENCES team_captain(player_id)
+                            on delete set null,
+                         FOREIGN KEY (player_id) REFERENCES team_player(player_id)
+                            on delete set null,
                          FOREIGN KEY (player_id) REFERENCES free_agent(player_id)
+                            on delete set null
                     );
 
                      
                      
-CREATE TABLE coach_type (c_type CHAR(20) PRIMARY KEY);
+CREATE TABLE coach_type (c_type VARCHAR(20) PRIMARY KEY);
 
 INSERT INTO coach_type VALUES ('Manager');
 INSERT INTO coach_type VALUES ('Assistant Manager');
 INSERT INTO coach_type VALUES ('Physical Trainer');
 
 CREATE TABLE coach (
-                        SSN INTEGER PRIMARY KEY,
-                        f_name CHAR(15) NOT NULL,
-                        l_name CHAR(15) NOT NULL,
+                        SSN CHAR(9) PRIMARY KEY,
+                        f_name VARCHAR(15) NOT NULL,
+                        l_name VARCHAR(15) NOT NULL,
                         salary INTEGER NOT NULL,
-                        c_type CHAR(20) NOT NULL,
+                        c_type VARCHAR(20) NOT NULL,
                         check (type in ('Manager', 'Assistant Manager', 'Physical Trainer')),
                         FOREIGN KEY (c_type) REFERENCES coach_type(c_type)
                     );
                     
 
 CREATE TABLE owner (
-                        SSN INTEGER PRIMARY KEY,
+                        SSN VARCHAR(9) PRIMARY KEY,
                         f_name CHAR(15) NOT NULL,
                         l_name CHAR(15) NOT NULL,
-                        net_worth INTEGER NOT NULL
+                        net_worth FLOAT NOT NULL
                     );
                     
 CREATE TABLE league (
-                        league_name CHAR(20) PRIMARY KEY,
-                        location CHAR(20) NOT NULL,
-                        title_winners CHAR(25) NOT NULL,
-                        participating_team_name CHAR(25) NOT NULL,
-                        FOREIGN KEY (participating_team_name) REFERENCES team(team_name)
+                        league_name VARCHAR(20) PRIMARY KEY,
+                        location VARCHAR(20) NOT NULL,
+                        title_winners VARCHAR(25) NOT NULL,
+                        participating_team_names VARCHAR(25) NOT NULL,
+                        FOREIGN KEY (participating_team_names) REFERENCES team(team_name)
                     );
                     
                     
 CREATE TABLE user (
-				   user_id CHAR(40) PRIMARY KEY,
-                   user_name varchar (20) not null,
+				   user_id VARCHAR(20) PRIMARY KEY,
+                   user_name VARCHAR (20) not null,
                    birth_date date not null,
                    sex varchar(1) not null,
-                   league_following nvarchar(4) not null,
+                   league_following VARCHAR(20) not null,
                    age integer not null,
-                   FOREIGN KEY (league_follwing) REFERENCES league(league_name)
+                   FOREIGN KEY (league_following) REFERENCES league(league_name)
                    
 			     );
                  
@@ -105,22 +110,20 @@ create table fixture (
 						fixture_date_time datetime not null,
                         location varchar(20) not null,
                         team_id varchar(20) primary key,
-                        FOREIGN KEY (team_id) REFERENCES league(team_id),
                         FOREIGN KEY (team_id) REFERENCES team(team_id)
 					);
                     
 
 create table match_officials (
-                              ssn char(11) primary key,
-                              match_official_name varchar(20) not null,
-                              team_id varchar(20),
-                              FOREIGN KEY (team_id) REFERENCES league(team_id)
+                              SSN CHAR(9) primary key,
+                              match_official_name VARCHAR(20) not null,
+                              works_for VARCHAR(20),
+                              FOREIGN KEY (works_for) REFERENCES league(league_name)
                              );
 
 create table stadium (  
-                        stadium_id varchar(20) primary key,
+                        stadium_id char(4),
                         location varchar(20) not null,
                         capacity integer not null,
-                        team_id varchar(20),
-                        FOREIGN KEY (team_id) REFERENCES team(team_id)
+                        FOREIGN KEY (stadium_id) REFERENCES team(team_id)
                      );
