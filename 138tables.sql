@@ -5,7 +5,6 @@ use soccer;
 
 CREATE TABLE team (
                         team_name VARCHAR(25) PRIMARY KEY,
-                        team_id CHAR(4),
                         salary_cap FLOAT NOT NULL DEFAULT 0,
                         wins INTEGER NOT NULL DEFAULT 0,
                         losses INTEGER NOT NULL DEFAULT 0,
@@ -21,18 +20,18 @@ CREATE TABLE team_captain (
                             date_joined DATE NOT NULL,
                             salary INTEGER NOT NULL,
                             jersey_number INTEGER NOT NULL,
-                            player_id INTEGER PRIMARY KEY
+                            player_id INTEGER REFERENCES player(player_id)
                           );
 CREATE TABLE team_player (
                             date_joined DATE NOT NULL,
                             salary INTEGER NOT NULL,
                             jersey_number INTEGER NOT NULL,
-                            player_id INTEGER PRIMARY KEY
+                            player_id INTEGER REFERENCES player(player_id)
                           );
 CREATE TABLE free_agent (
                             date_left DATE NOT NULL,
                             desired_salary INTEGER NOT NULL,
-                            player_id INTEGER PRIMARY KEY
+                            player_id INTEGER REFERENCES player(player_id)
                         );
                           
                           
@@ -47,16 +46,10 @@ CREATE TABLE player (
                          yellow_cards INTEGER NOT NULL,
                          red_cards INTEGER NOT NULL,
                          minutes_played INTEGER NOT NULL,
-                         player_id INTEGER NOT NULL,
+                         player_id INTEGER PRIMARY KEY,
                          team_name VARCHAR(25) NOT NULL,
                          FOREIGN KEY (team_name) REFERENCES team(team_name)
                             on delete set null,
-                         FOREIGN KEY (player_id) REFERENCES team_captain(player_id)
-                            on delete set null,
-                         FOREIGN KEY (player_id) REFERENCES team_player(player_id)
-                            on delete set null,
-                         FOREIGN KEY (player_id) REFERENCES free_agent(player_id)
-                            on delete set null
                     );
 
                      
@@ -109,8 +102,8 @@ CREATE TABLE user (
 create table fixture ( 
 						fixture_date_time datetime not null,
                         location varchar(20) not null,
-                        team_id varchar(20) primary key,
-                        FOREIGN KEY (team_id) REFERENCES team(team_id)
+                        team_name1 VARCHAR(25) REFERENCES team(team_name),
+                        team_name2 VARCHAR(25) REFERENCES team(team_name),
 					);
                     
 
