@@ -4,7 +4,6 @@ use soccer;
 
 
 CREATE TABLE team (
-						team_id char(4) not null,
                         team_name VARCHAR(25) PRIMARY KEY,
                         salary_cap FLOAT NOT NULL DEFAULT 0,
                         wins INTEGER NOT NULL DEFAULT 0,
@@ -119,5 +118,5 @@ create table stadium (
                         owning_team varchar(25),
                         location varchar(20) not null,
                         capacity integer not null,
-                        FOREIGN KEY (stadium_id) REFERENCES team(team_name)
+                        FOREIGN KEY (owning_team) REFERENCES team(team_name)
                      );
