@@ -4,6 +4,7 @@ use soccer;
 
 
 CREATE TABLE team (
+						team_id char(4) not null,
                         team_name VARCHAR(25) PRIMARY KEY,
                         salary_cap FLOAT NOT NULL DEFAULT 0,
                         wins INTEGER NOT NULL DEFAULT 0,
@@ -20,23 +21,23 @@ CREATE TABLE team_captain (
                             date_joined DATE NOT NULL,
                             salary INTEGER NOT NULL,
                             jersey_number INTEGER NOT NULL,
-                            player_id INTEGER REFERENCES player(player_id)
+                            player_id char(9) REFERENCES player(SSN)
                           );
 CREATE TABLE team_player (
                             date_joined DATE NOT NULL,
                             salary INTEGER NOT NULL,
                             jersey_number INTEGER NOT NULL,
-                            player_id INTEGER REFERENCES player(player_id)
+                            player_id char(9) REFERENCES player(SSN)
                           );
 CREATE TABLE free_agent (
                             date_left DATE NOT NULL,
                             desired_salary INTEGER NOT NULL,
-                            player_id INTEGER REFERENCES player(player_id)
+                            player_id char(9) REFERENCES player(SSN)
                         );
                           
                           
 CREATE TABLE player (
-                         SSN CHAR(9) PRIMARY KEY,
+                         SSN CHAR(9) primary key,
                          p_type VARCHAR(25) NOT NULL,
                          f_name VARCHAR(15) NOT NULL,
                          l_name VARCHAR(15) NOT NULL,
@@ -46,10 +47,9 @@ CREATE TABLE player (
                          yellow_cards INTEGER NOT NULL,
                          red_cards INTEGER NOT NULL,
                          minutes_played INTEGER NOT NULL,
-                         player_id INTEGER PRIMARY KEY,
+                         player_id INTEGER,
                          team_name VARCHAR(25) NOT NULL,
                          FOREIGN KEY (team_name) REFERENCES team(team_name)
-                            on delete set null,
                     );
 
                      
@@ -103,7 +103,7 @@ create table fixture (
 						fixture_date_time datetime not null,
                         location varchar(20) not null,
                         team_name1 VARCHAR(25) REFERENCES team(team_name),
-                        team_name2 VARCHAR(25) REFERENCES team(team_name),
+                        team_name2 VARCHAR(25) REFERENCES team(team_name)
 					);
                     
 
@@ -115,8 +115,9 @@ create table match_officials (
                              );
 
 create table stadium (  
-                        stadium_id char(4),
+                        stadium_id char(4) primary key,
+                        owning_team varchar(25),
                         location varchar(20) not null,
                         capacity integer not null,
-                        FOREIGN KEY (stadium_id) REFERENCES team(team_id)
+                        FOREIGN KEY (stadium_id) REFERENCES team(team_name)
                      );
