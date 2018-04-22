@@ -47,8 +47,6 @@ CREATE TABLE player (
                          red_cards INTEGER NOT NULL,
                          minutes_played INTEGER NOT NULL,
                          player_id INTEGER,
-                         team_name VARCHAR(25) NOT NULL,
-                         FOREIGN KEY (team_name) REFERENCES team(team_name)
                     );
 
                      
@@ -91,9 +89,7 @@ CREATE TABLE user (
                    user_name VARCHAR (20) not null,
                    birth_date date not null,
                    sex varchar(1) not null,
-                   league_following VARCHAR(20) not null,
                    age integer not null,
-                   FOREIGN KEY (league_following) REFERENCES league(league_name)
                    
 			     );
                  
