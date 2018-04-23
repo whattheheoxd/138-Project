@@ -46,7 +46,7 @@ CREATE TABLE player (
                          yellow_cards INTEGER NOT NULL,
                          red_cards INTEGER NOT NULL,
                          minutes_played INTEGER NOT NULL,
-                         player_id INTEGER,
+                         player_id INTEGER
                     );
 
                      
@@ -89,7 +89,7 @@ CREATE TABLE user (
                    user_name VARCHAR (20) not null,
                    birth_date date not null,
                    sex varchar(1) not null,
-                   age integer not null,
+                   age integer not null
                    
 			     );
                  
