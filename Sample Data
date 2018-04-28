@@ -1,0 +1,147 @@
+INSERT INTO team VALUES('Barcelona', 507.5, 25, 8, 14, 2, 11, 6);
+INSERT INTO team VALUES('Real Madrid', 499.3, 20, 13, 12, 6, 8, 7);
+INSERT INTO team VALUES('Atletico Madrid', 237.8, 21, 13, 12, 6, 9, 7);
+INSERT INTO team VALUES('Manchester United', 220.8, 23, 11, 14, 3, 9, 8);
+INSERT INTO team VALUES('Manchester City', 225.6, 29, 5, 16, 1, 13, 4);
+INSERT INTO team VALUES('Chelsea', 218.8, 19, 15, 10, 7, 9, 8);
+INSERT INTO team VALUES('Arsenal', 200.5, 17, 17, 9, 8, 8, 9);
+
+INSERT INTO player VALUES('000000000', 'Anon0', 'Last0', 20, 5, 0, 2, 0, 40, 9999);
+INSERT INTO player VALUES('000000001', 'Anon1', 'Last1', 21, 10, 10, 4, 1, 60, 9998);
+INSERT INTO player VALUES('000000002', 'Anon2', 'Last2', 22, 15, 1, 8, 2, 80, 9997);
+INSERT INTO player VALUES('000000003', 'Anon3', 'Last3', 23, 20, 0, 9, 0, 50, 9996);
+INSERT INTO player VALUES('000000004', 'Anon4', 'Last4', 24, 39, 0, 15, 2, 3958, 9995);
+INSERT INTO player VALUES('000000005', 'Anon5', 'Last5', 22, 48, 0, 36, 3, 2650, 9994);
+INSERT INTO player VALUES('000000006', 'Anon6', 'Last6', 23, 0, 125, 8, 0, 4080, 9993);
+INSERT INTO player VALUES('000000007', 'Anon7', 'Last7', 21, 87, 0, 21, 1, 6109, 9992);
+INSERT INTO player VALUES('000000008', 'Anon8', 'Last8', 28, 0, 483, 9, 0, 8482, 9991);
+INSERT INTO player VALUES('000000009', 'Lionel', 'Messi', 30, 608, 0, 71, 1, 54789, 1);
+INSERT INTO player VALUES('000000010', 'Christiano', 'Ronaldo', 33, 652, 0, 103, 5, 64791, 2);
+INSERT INTO player VALUES('000000011', 'Thiago', 'Silva', 33, 40, 0, 38, 1, 33910, 3);
+INSERT INTO player VALUES('000000012', 'Jan', 'Oblak', 25, 0, 569, 9, 0, 17058, 4);
+INSERT INTO player VALUES('000000013', 'David', 'De Gea', 27, 0, 643, 9, 0, 22764, 5);
+INSERT INTO player VALUES('000000014', 'Anon9', 'Last9', 24, 0, 483, 9, 0, 6234, 9990);
+INSERT INTO player VALUES('000000015', 'Anon10', 'Last10', 28, 103, 0, 8, 0, 9253, 9989);
+INSERT INTO player VALUES('000000016', 'Anon11', 'Last11', 22, 50, 0, 5, 0, 1643, 9988);
+INSERT INTO player VALUES('000000017', 'Anon12', 'Last12', 25, 23, 0, 9, 0, 7478, 9987);
+INSERT INTO player VALUES('000000018', 'Anon13', 'Last13', 21, 67, 0, 19, 3, 3859, 9986);
+INSERT INTO player VALUES('000000019', 'Anon14', 'Last14', 26, 24, 0, 11, 1, 7839, 9985);
+INSERT INTO player VALUES('000000020', 'Anon15', 'Last15', 23, 74, 0, 7, 0, 6475, 9984);
+INSERT INTO player VALUES('000000021', 'Anon16', 'Last16', 21, 97, 0, 3, 0, 3859, 9983);
+INSERT INTO player VALUES('000000022', 'Anon17', 'Last17', 20, 40, 0, 3, 0, 2859, 9982);
+INSERT INTO player VALUES('000000023', 'Anon18', 'Last18', 24, 73, 0, 20, 2, 4856, 9981);
+INSERT INTO player VALUES('000000024', 'Anon19', 'Last19', 22, 0, 123, 1, 0, 2938, 9980);
+INSERT INTO player VALUES('000000025', 'Anon20', 'Last20', 27, 0, 247, 2, 0, 7584, 9979);
+INSERT INTO player VALUES('000000026', 'Anon21', 'Last21', 24, 124, 0, 13, 0, 6384, 9978);
+INSERT INTO player VALUES('000000027', 'Anon22', 'Last22', 27, 51, 0, 10, 0, 5853, 9977);
+INSERT INTO player VALUES('000000028', 'Anon23', 'Last23', 21, 23, 0, 3, 0, 3845, 9976);
+INSERT INTO player VALUES('000000029', 'Per', 'Mertesacker', 33, 23, 0, 19, 4, 29358, 6);
+INSERT INTO player VALUES('000000030', 'Michael', 'Carrick', 42, 18, 0, 31, 0, 29355, 7);
+INSERT INTO player VALUES('000000031', 'Vincent', 'Kompany', 32, 27, 0, 90, 5, 35064, 8);
+INSERT INTO player VALUES('000000032', 'Gary', 'Cahill', 32, 49, 0, 58, 4, 43692, 9);
+INSERT INTO player VALUES('000000033', 'Anon24', 'Last24', 25, 60, 0, 15, 1, 9583, 9975);
+INSERT INTO player VALUES('000000034', 'Anon25', 'Last25', 27, 409, 0, 27, 3, 14927, 9974);
+
+INSERT INTO team_captain VALUES('2004-10-16', 30, 10, '000000009', 'Barcelona');
+INSERT INTO team_captain VALUES('2009-07-01', 32, 7, '000000010', 'Real Madrid');
+INSERT INTO team_captain VALUES('2012-06-11', 12, 2, '000000011', 'Atletico Madrid');
+INSERT INTO team_captain VALUES('2004-11-15', 3, 4, '000000029', 'Arsenal');
+INSERT INTO team_captain VALUES('2006-08-04', 4, 16, '000000030', 'Manchester United');
+INSERT INTO team_captain VALUES('2008-08-22', 10, 4, '000000031', 'Manchester City');
+INSERT INTO team_captain VALUES('2012-02-05', 4, 24, '000000032', 'Chelsea');
+
+INSERT INTO team_player VALUES('2012-04-16', 10, 11, '000000000', 'Barcelona');
+INSERT INTO team_player VALUES('2013-11-11', 11, 12, '000000001', 'Barcelona');
+INSERT INTO team_player VALUES('2014-06-19', 12, 13, '000000002', 'Barcelona');
+INSERT INTO team_player VALUES('2011-07-13', 18, 8, '000000003', 'Real Madrid');
+INSERT INTO team_player VALUES('2013-03-09', 14, 9, '000000004', 'Real Madrid');
+INSERT INTO team_player VALUES('2015-12-26', 13, 10, '000000005', 'Real Madrid');
+INSERT INTO team_player VALUES('2015-06-30', 16, 3, '000000006', 'Atletico Madrid');
+INSERT INTO team_player VALUES('2015-04-24', 20, 4, '000000007', 'Atletico Madrid');
+INSERT INTO team_player VALUES('2015-09-18', 15, 5, '000000008', 'Atletico Madrid');
+INSERT INTO team_player VALUES('2014-06-23', 5, 1, '000000014', 'Chelsea');
+INSERT INTO team_player VALUES('2017-02-09', 8, 15, '000000015', 'Chelsea');
+INSERT INTO team_player VALUES('2015-08-19', 5, 7, '000000016', 'Chelsea');
+INSERT INTO team_player VALUES('2013-04-17', 7, 8, '000000017', 'Chelsea');
+INSERT INTO team_player VALUES('2012-01-20', 4, 9, '000000018', 'Arsenal');
+INSERT INTO team_player VALUES('2013-06-15', 12, 23, '000000019', 'Arsenal');
+INSERT INTO team_player VALUES('2014-06-27', 11, 0, '000000020', 'Arsenal');
+INSERT INTO team_player VALUES('2016-05-20', 5, 12, '000000021', 'Arsenal');
+INSERT INTO team_player VALUES('2013-11-05', 8, 44, '000000022', 'Manchester City');
+INSERT INTO team_player VALUES('2016-07-30', 11, 30, '000000023', 'Manchester City');
+INSERT INTO team_player VALUES('2015-04-01', 14, 10, '000000024', 'Manchester City');
+INSERT INTO team_player VALUES('2012-12-25', 6, 17, '000000025', 'Manchester City');
+INSERT INTO team_player VALUES('2013-08-15', 15, 50, '000000026', 'Manchester United');
+INSERT INTO team_player VALUES('2015-03-14', 8, 5, '000000027', 'Manchester United');
+INSERT INTO team_player VALUES('2017-05-09', 9, 10, '000000028', 'Manchester United');
+
+INSERT INTO free_agent VALUES('2018-01-02', 25, '000000012');
+INSERT INTO free_agent VALUES('2018-02-03', 19, '000000013');
+INSERT INTO free_agent VALUES('2018-01-30', 14, '000000033');
+INSERT INTO free_agent VALUES('2018-04-16', 10, '000000034');
+
+INSERT INTO coach VALUES('111111111', 'Coach1', 'Name1', 10, 'Manager', 'Barcelona');
+INSERT INTO coach VALUES('222222222', 'Coach2', 'Name2', 5, 'Assistant Manager', 'Barcelona');
+INSERT INTO coach VALUES('333333333', 'Coach3', 'Name3', 3, 'Physical Trainer', 'Barcelona');
+INSERT INTO coach VALUES('444444444', 'Coach4', 'Name4', 8, 'Manager', 'Real Madrid');
+INSERT INTO coach VALUES('555555555', 'Coach5', 'Name5', 4, 'Assistant Manager', 'Real Madrid');
+INSERT INTO coach VALUES('666666666', 'Coach6', 'Name6', 4, 'Physical Trainer', 'Real Madrid');
+INSERT INTO coach VALUES('777777777', 'Coach7', 'Name7', 9, 'Manager', 'Atletico Madrid');
+INSERT INTO coach VALUES('888888888', 'Coach8', 'Name8', 6, 'Assistant Manager', 'Atletico Madrid');
+INSERT INTO coach VALUES('999999999', 'Coach9', 'Name9', 3, 'Physical Trainer', 'Atletico Madrid');
+INSERT INTO coach VALUES('110011001', 'Coach10', 'Name10', 8, 'Manager', 'Chelsea');
+INSERT INTO coach VALUES('220022002', 'Coach11', 'Name11', 5, 'Assistant Manager', 'Chelsea');
+INSERT INTO coach VALUES('330033003', 'Coach12', 'Name12', 3, 'Physical Trainer', 'Chelsea');
+INSERT INTO coach VALUES('440044004', 'Coach13', 'Name13', 10, 'Manager', 'Arsenal');
+INSERT INTO coach VALUES('550055005', 'Coach14', 'Name14', 7, 'Assistant Manager', 'Arsenal');
+INSERT INTO coach VALUES('660066006', 'Coach15', 'Name15', 5, 'Physical Trainer', 'Arsenal');
+INSERT INTO coach VALUES('770077007', 'Coach16', 'Name16', 8, 'Manager', 'Manchester United');
+INSERT INTO coach VALUES('880088008', 'Coach17', 'Name17', 4, 'Assistant Manager', 'Manchester United');
+INSERT INTO coach VALUES('990099009', 'Coach18', 'Name18', 2, 'Physical Trainer', 'Manchester United');
+INSERT INTO coach VALUES('111000111', 'Coach19', 'Name19', 9, 'Manager', 'Manchester City');
+INSERT INTO coach VALUES('222000222', 'Coach20', 'Name20', 6, 'Assistant Manager', 'Manchester City');
+INSERT INTO coach VALUES('333000333', 'Coach21', 'Name21', 4, 'Physical Trainer', 'Manchester City');
+
+INSERT INTO coach_type VALUES ('Manager');
+INSERT INTO coach_type VALUES ('Assistant Manager');
+INSERT INTO coach_type VALUES ('Physical Trainer');
+
+INSERT INTO owner VALUES('101010101', 'Owner1', 'Name1', 483, 'Barcelona');
+INSERT INTO owner VALUES('202020202', 'Owner2', 'Name2', 952, 'Real Madrid');
+INSERT INTO owner VALUES('303030303', 'Owner3', 'Name3', 569, 'Barcelona');
+INSERT INTO owner VALUES('404040404', 'Owner4', 'Name4', 819, 'Atletico Madrid');
+INSERT INTO owner VALUES('505050505', 'Owner5', 'Name5', 745, 'Arsenal');
+INSERT INTO owner VALUES('606060606', 'Owner6', 'Name6', 842, 'Manchester United');
+INSERT INTO owner VALUES('707070707', 'Owner7', 'Name7', 503, 'Chelsea');
+INSERT INTO owner VALUES('808080808', 'Owner8', 'Name8', 691, 'Manchester City');
+
+INSERT INTO league VALUES ('La Liga', 'Spain', NULL, 'Barcelona');
+INSERT INTO league VALUES ('La Liga', 'Spain', NULL, 'Real Madrid');
+INSERT INTO league VALUES ('La Liga', 'Spain', NULL, 'Atletico Madrid');
+INSERT INTO league VALUES ('Premier League', 'United Kingdom', NULL, 'Chelsea');
+INSERT INTO league VALUES ('Premier League', 'United Kingdom', NULL, 'Manchester City');
+INSERT INTO league VALUES ('Premier League', 'United Kingdom', NULL, 'Arsenal');
+INSERT INTO league VALUES ('Premier League', 'United Kingdom', NULL, 'Manchester United');
+
+insert into fixture (fixture_date_time, location, home_team, away_team)
+values ('2018-01-02', 'C. d Aristides Maillol', 'Barcelona', 'Real Madrid'), 
+('2018-05-01', 'Av. de Luis Aragones', 'Atletico Madrid', 'Real Madrid'),
+('2018-05-06', 'Av. de Concha Espina', 'Barcelona', 'Atletico Madrid'),
+('2018-05-06', 'Av. de Luis Aragones', 'Atletico Madrid', 'Real Madrid');
+
+insert into fixture (fixture_date_time, location, home_team, away_team)
+values ('2018-01-02', 'Ashton New Rd', 'Manchester City', 'Manchester United'),
+('2018-05-01', 'Ashton New Rd', 'Manchester City', 'Arsenal'),
+('2018-01-02', 'Fulham Rd', 'Chelsea', 'Arsenal'),
+('2018-05-01', 'Fulham Rd', 'Chelsea', 'Manchester United');
+                             
+INSERT INTO match_officials VALUES ('123456789', 'La Liga Official', 'La Liga');
+INSERT INTO match_officials VALUES ('987654321', 'Premier Official', 'Premier League');
+                     
+INSERT INTO stadium VALUES ('1111', 'Barcelona', 'C. d Aristides Maillol', 99354);
+INSERT INTO stadium VALUES ('2222', 'Real Madrid', 'Av. de Concha Espina', 81044);
+INSERT INTO stadium VALUES ('3333', 'Atletico Madrid', 'Av. de Luis Aragones', 67703);
+INSERT INTO stadium VALUES ('4444', 'Manchester City', 'Ashton New Rd', 61097);
+INSERT INTO stadium VALUES ('5555', 'Manchester United', 'Sir Matt Busby Way', 74997);
+INSERT INTO stadium VALUES ('6666', 'Chelsea', 'Fulham Rd', 41631);
+INSERT INTO stadium VALUES ('7777', 'Arsenal', 'Hornsey Rd', 59867);
