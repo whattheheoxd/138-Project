@@ -11,7 +11,7 @@ CREATE TABLE team (
                         road_wins INTEGER NOT NULL DEFAULT 0,
                         road_losses INTEGER NOT NULL DEFAULT 0
                    );
-                   
+
 CREATE TABLE team_captain (
                             date_joined DATE NOT NULL,
                             salary INTEGER NOT NULL,
@@ -19,7 +19,8 @@ CREATE TABLE team_captain (
                             player_ssn char(9) REFERENCES player(SSN) ON DELETE CASCADE,
                             team_name VARCHAR(25) REFERENCES team(team_name) ON DELETE CASCADE
                           );
-                          
+
+
 CREATE TABLE team_player (
                             date_joined DATE NOT NULL,
                             salary INTEGER NOT NULL,
@@ -27,14 +28,13 @@ CREATE TABLE team_player (
                             player_ssn char(9) REFERENCES player(SSN) ON DELETE CASCADE,
                             team_name VARCHAR(25) REFERENCES team(team_name) ON DELETE CASCADE
                           );
-
                           
 CREATE TABLE free_agent (
                             date_left DATE NOT NULL,
                             desired_salary INTEGER NOT NULL,
                             player_ssn char(9) REFERENCES player(SSN) ON DELETE CASCADE
                         );
-
+                          
 CREATE TABLE player (
                          SSN CHAR(9) primary key,
                          f_name VARCHAR(15) NOT NULL,
@@ -47,13 +47,11 @@ CREATE TABLE player (
                          minutes_played INTEGER NOT NULL,
                          player_id INTEGER
                     );
-
+                     
 CREATE TABLE coach_type (
                             c_type VARCHAR(20) PRIMARY KEY
                         );
-INSERT INTO coach_type VALUES ('Manager');
-INSERT INTO coach_type VALUES ('Assistant Manager');
-INSERT INTO coach_type VALUES ('Physical Trainer');
+
 CREATE TABLE coach (
                         SSN CHAR(9) PRIMARY KEY,
                         f_name VARCHAR(15) NOT NULL,
@@ -64,7 +62,6 @@ CREATE TABLE coach (
                         coaches VARCHAR(25) REFERENCES team(team_name) ON DELETE SET NULL
                     );
                     
-
 CREATE TABLE owner (
                         SSN VARCHAR(9) PRIMARY KEY,
                         f_name VARCHAR(15) NOT NULL,
@@ -72,7 +69,6 @@ CREATE TABLE owner (
                         net_worth FLOAT NOT NULL,
                         owns VARCHAR(25) REFERENCES team(team_name) ON DELETE SET NULL
                     );
-                    
                     
 CREATE TABLE league (
                         league_name VARCHAR(20) ,
@@ -82,24 +78,16 @@ CREATE TABLE league (
                         primary key (league_name, participating_team_names),
                         FOREIGN KEY (participating_team_names) REFERENCES team(team_name) ON DELETE CASCADE
                     );
-
                     
-CREATE TABLE user (
-                   user_id VARCHAR(20) PRIMARY KEY,
-                   user_name VARCHAR (20) not null,
-                   birth_date date not null,
-                   sex varchar(1) not null,
-                   age integer not null
-                 );
-                 
                  
 create table fixture ( 
                         fixture_date_time datetime not null,
                         location varchar(50) not null,
-                        winner VARCHAR(25),
+                        winner VARCHAR(25) ,
                         loser VARCHAR(25), 
-                        team_name1 VARCHAR(25) REFERENCES team(team_name) ON DELETE SET NULL,
-                        team_name2 VARCHAR(25) REFERENCES team(team_name) ON DELETE SET NULL
+                        home_team VARCHAR(25) REFERENCES team(team_name) ON DELETE SET NULL,
+                        away_team VARCHAR(25) REFERENCES team(team_name) ON DELETE SET NULL,
+                        primary key (fixture_date_time, location)
                     );
                     
 create table match_officials (
@@ -107,7 +95,6 @@ create table match_officials (
                               match_official_name VARCHAR(20) not null,
                               works_for VARCHAR(45) REFERENCES league(league_name) ON DELETE SET NULL
                              );
-                             
 
 create table stadium (  
                         stadium_id char(4) primary key,
@@ -116,4 +103,3 @@ create table stadium (
                         capacity integer not null,
                         FOREIGN KEY (owning_team) REFERENCES team(team_name) ON DELETE CASCADE
                      );
-
