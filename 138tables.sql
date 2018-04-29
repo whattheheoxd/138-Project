@@ -44,8 +44,7 @@ CREATE TABLE player (
                          goals_stopped INTEGER NOT NULL,
                          yellow_cards INTEGER NOT NULL,
                          red_cards INTEGER NOT NULL,
-                         minutes_played INTEGER NOT NULL,
-                         player_id INTEGER
+                         minutes_played INTEGER NOT NULL
                     );
                      
 CREATE TABLE coach_type (
